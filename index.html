@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="t.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tech Trend Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .footer-basic {
+            padding: 40px 0;
+            background-color: rgb(81, 255, 81, 0.5);
+            color: black;
+        }
+
+        .footer-basic ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .footer-basic li {
+            padding: 0 10px;
+        }
+
+        .footer-basic ul a {
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        .footer-basic ul a:hover {
+            opacity: 1;
+        }
+
+        .footer-basic .social {
+            text-align: center;
+            padding-bottom: 25px;
+        }
+
+        .footer-basic .social>a {
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 50%;
+            border: 1px solid black;
+            margin: 0 8px;
+            color: inherit;
+            opacity: 0.75;
+        }
+
+        .footer-basic .social>a:hover {
+            opacity: 1;
+        }
+
+        .footer-basic .copyright {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 13px;
+            color: black;
+            margin-bottom: 0;
+        }
+
+        .news {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin: 20px;
+            margin-top: 30px;
+        }
+
+        .news .columns .cards {
+            border: 0.1px solid rgba(136, 141, 136, 0.975);
+            border-radius: 5px;
+            box-shadow: 0, 0, 0.3 black;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        .news .columns {
+            margin-left: 10px;
+        }
+
+        .news .columns .cards .btn {
+            width: 11rem;
+            border: 2px solid rgba(0, 255, 0, 0.975);
+            color: black;
+            background-color: rgb(81, 255, 81, 0.5);
+            border-radius: 5px;
+            padding: 6px 0px;
+        }
+
+        .news .columns .cards .content {
+            padding: 10px;
+        }
+
+        .news .columns .cards .btn:hover {
+            background-color: rgba(0, 255, 0, 0.475);
+            
+        }
+        .news .columns .cards .content h5{
+            height: 50px;
+        }
+        .news .columns .cards .content .des
+        {
+            height: 73px;
+        }
+        @media (min-width: 500px) and (max-width: 1200px) {
+            .news {
+                display: block;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .news .columns {
+                margin-left: 0;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar sticky-top  navbar-expand-lg" style="background-color: rgb(177, 245, 171,0.9);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="img/t.png" alt="Tech Trend Hub" width="40px"
+                    height="40px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ML.html" >Machine Learning</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Ai.html">A.I</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="review.html">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feed.php">Feedback</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    "Let's Go With the Tech Trend"
+                </span>
+            </div>
+        </div>
+    </nav>
+    <div class="news">
+    </div>
+    <center><span id="count"
+            style="text-align: center; color: grey; font-family: Times New Roman; margin-top: 5px ;">Results</span>
+    </center>
+    <div class="d-flex justify-content-around">
+        <button class="btn btn-primary my-4 mx-4" id="prev">&lt; Previous</button>
+        <button class="btn btn-primary my-4 mx-1" id="next">Next Page &gt;</button>
+    </div>
+    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+        <script src="script.js"></script>
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <div class="footer-basic">
+        <footer>
+            <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i
+                        class="icon ion-social-snapchat"></i></a><a href="#"><i
+                        class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a>
+            </div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Home</a></li>
+                <li class="list-inline-item"><a href="#">About</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <p class="copyright">TechTrendHub © 2024</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        currentQuery = "coding"
+        currentPage = 1;
+        const fetchnews = async (page, q) => {
+            console.log(`Fetching News for ${q}. page number ${page}..`)
+            var url = 'https://newsapi.org/v2/everything?' +
+                'q=' + q +
+                '&language=en&' +
+                'pageSize=10&' +
+                'page=' + page +
+                '&sortBy=publishedAt&' +
+                'apiKey=1b8c12a0cb7a4429bc2bf30e010f40b5';
+
+            var req = new Request(url);
+            let a = await fetch(req)
+            let response = await a.json()
+            let str = ""
+            count.innerHTML = "Results: " + response.totalResults
+            for (let item of response.articles) {
+                str = str + `<div class="columns">
+            <div class="cards style="width: 38rem; height:50rem;">
+                <img src="${item.urlToImage}" onerror="this.onerror=null; this.src='img/noimg.jpg'" class="card-img-top" alt="image" height="380px">
+                <div class="content">
+                    <h5 class="title">${item.title.slice(0,149)}</h5>
+                    <p class="text des">${item.description.slice(0, 300)}</p>
+                    <p class="text">Published At : ${item.publishedAt.slice(0, 10)}</p>
+                    <p class="text">Author : ${item.author}</p>
+                    <p class="text" style="color:green; text-decoration: underline;">${item.source.name}</p>
+                    <a href="${item.url}" target="_blank" class="btn">Read Full Article <i class='fas fa-external-link-alt'></i></a>
+                </div>
+            </div>
+        </div>`
+            }
+            document.querySelector(".news").innerHTML = str
+        }
+        fetchnews(1, currentQuery)
+        prev.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (currentPage > 1) {
+                currentPage = currentPage - 1;
+                fetchnews(currentPage, currentQuery);
+                window.scrollTo(0,0);
+            }
+
+        })
+        next.addEventListener("click", (e) => {
+            e.preventDefault();
+            currentPage = currentPage + 1;
+            fetchnews(currentPage, currentQuery);
+            window.scrollTo(0,0);
+        })
+
+    </script>
+</body>
+
+</html>
